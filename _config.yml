@@ -9,14 +9,14 @@ var:
   tags_path : /tags.html
   rss_path: /atom.xml
 
-production_url : http://username.github.com # or your custom domain name
-title : Jekyll Boostrap
+production_url : http://kaiyuan.github.com # or your custom domain name
+title : Thinks
 
 author :
-  name : Name Lastname
-  email : blah@email.test
-  github : username
-  twitter : username
+  name : Kaiyuan
+  email : Kaiyuan@me.com
+  github : Kaiyuan
+  twitter : KaiyuanXie
   feedbuder : feedname
 
 exclude: .rbenv-version

@@ -11,4 +11,4 @@ header: Kaiyuan
 You Know?
 
 
-
+{% include helpers/posts_collate.html %}
