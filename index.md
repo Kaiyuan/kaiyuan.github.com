@@ -1,5 +1,5 @@
 ---
-layout: Home
+layout: page
 title: Kaiyuan - GIT
 header: Kaiyuan
 ---
