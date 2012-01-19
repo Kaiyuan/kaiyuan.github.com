@@ -10,5 +10,5 @@ header: Kaiyuan
 
 You Know?
 
-
+{% assign posts_collate = site.posts %}
 {% include helpers/posts_collate.html %}
