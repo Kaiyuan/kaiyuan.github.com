@@ -9,8 +9,8 @@ var:
   tags_path : /tags.html
   rss_path: /atom.xml
 
-production_url : http://kaiyuan.github.com # or your custom domain name
-title : Thinks
+production_url : http://talk.boxks.com # or your custom domain name
+title : Talk
 
 author :
   name : Kaiyuan
