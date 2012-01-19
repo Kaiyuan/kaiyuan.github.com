@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Kaiyuan - GIT
+title: Kaiyuan - Git
 header: Kaiyuan
 ---
 
-[Kaiyuan](http://boxks.com)
+[Kaiyuan](http://boxks.com "Boxks.com")
 
 ## I know what's this. 
 
