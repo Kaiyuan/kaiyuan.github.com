@@ -2,7 +2,7 @@
 layout: post
 category : Books
 tags : [Books]
-layout: post title:接触了Jekyll后
+title:接触了Jekyll后
 ---
 在[V2EX](http://www.v2ex.com/t/25779)看到一篇分享，之后就自己也在Github装了一个。现在我完全中毒了，现在想放弃Wordpress，但是又不舍得自由排版每篇文章，所以就另外用一个域名。
 
