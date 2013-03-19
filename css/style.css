@@ -59,7 +59,7 @@ a{
 }
 a {color: #2C769E;}
 a:hover {color: #4396cb;}
-a img:hover {opacity: .7;}
+.centerbox a img:hover {opacity: .7;}
 p a:hover{color: #000;background: #e7efff;}
 blockquote {
 	border-left: 3px solid #C0E7FC;

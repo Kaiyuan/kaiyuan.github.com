@@ -4,21 +4,33 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Developer - Kaiyuan</title>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-	<script type="text/javascript" chares="utf-8" src="../../../js/jquery-1.9.0.min"></script>
-	<link rel="stylesheet" type="text/css" href="footnotes.js/museo-slab.css">
-	<link rel="stylesheet" type="text/css" href="footnotes.js/footnotes.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" chares="utf-8" src="../../../js/jquery-1.9.0.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../footnotes.js/museo-slab.css">
+	<link rel="stylesheet" type="text/css" href="../footnotes.js/footnotes.css">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="audio-bar.css">
 </head>
 <body>
 	<header><section class="centerbox"><h1>Developer</h1><a href="http://kaiyuan.github.com">kaiyuan.github.com</a></section></header>
 	<article class="center">
 		<section class="centerbox">
-			<a href="footnotes.js/sup.html"><img src="https://du26vw.blu.livefilestore.com/y1pTSd-U8iOjkSW3QBQrqtB0opEexu9wNM4qfIIjZ_GCbH26F0oEpK2DSppeVKPMYbDDuND2ozX_NSaJFMcfkkU9Q700C89Ch-I/bootstrap-footnotes-js-no-bootstrap-760.png" width="100%" alt="Footnotes.js"></a>
-			<a href="footnotes.js/sup.html"><h2>Footnotes.js</h2></a>
-			<p>基於 <a class="sup" data-text="原始版本需要引用 Bootstrap." href="http://taitems.github.com/UX-Lab/BootstrapFootnotes/index.html">bootstrap.footnotes.js</a> 效果，從新編寫的一個僅僅依賴 jQuery 的特效。</p>
+			<ul class="audio-bar-box sup" data-img="http://img.xiami.com/images/album/img56/23256/5466781350360005_2.jpg">
+				<li>&nbsp;</li>
+				<li>
+					<div class="bar-box">
+						<div id="play-bar"></div>
+					</div>
+				</li>
+				<li id="playtime">00:00</li>
+				<li>
+					&nbsp;
+					<div class="auVolume"><span id="auVbar">&nbsp;</span></div>
+				</li>
+				<audio id="audio-bar" src="http://f1.xiami.net/23256/546678/08_1771358570_3869233.mp3"></audio>
+			</ul>
 		</section>
 	</article>
-	<footer>
+	<!-- <footer>
 		<section class="centerbox">
 			If my project can help to your words, I hope you can give generous donors.<br>
 			如果我的項目能幫助到您的話，希望你能慷概的給予捐助以便創作更多能幫助您的代碼。<br>
@@ -28,7 +40,7 @@
 					<input type="hidden" name="cmd" value="_donations">
 					<input type="hidden" name="business" value="sealour@gmail.com">
 					<input type="hidden" name="lc" value="US">
-					<input type="hidden" name="item_name" value="Kaiyuan.github.com">
+					<input type="hidden" name="item_name" value="Audio bar">
 					<input type="hidden" name="no_note" value="0">
 					<input type="hidden" name="currency_code" value="USD">
 					<input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_SM.gif:NonHostedGuest">
@@ -40,9 +52,9 @@
 					<a class="sup" data-text="支付寶" target="_blank" href="https://me.alipay.com/kaiyuan">捐助</a>
 				</li>
 			</ul><br>
-			by <a href="http://boxks.com">Kaiyuan</a>
+			Design by <a href="http://boxks.com">Kaiyuan</a>
 		</section>
-	</footer>
+	</footer> -->
 <!--[if lte IE 9]>
 	<link rel="stylesheet" href="http://kaiyuan.github.com/killie/killie-noimg.css" title="text/css" media="screen"  />
 	<div class="killie">
@@ -56,7 +68,7 @@
 		</div>
 	</div>
 <![endif]-->
-	<script type="text/javascript" chares="utf-8" src="footnotes.js/footnotes.js"></script>
-	<script type="text/javascript" chares="utf-8" src="js/script.js"></script>
+	<script type="text/javascript" chares="utf-8" src="../footnotes.js/footnotes.js"></script>
+	<script type="text/javascript" chares="utf-8" src="audio-bar.js"></script>
 </body>
 </html>
