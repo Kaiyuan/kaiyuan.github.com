@@ -7,7 +7,5 @@ Demo: [http://kaiyuan.github.com/audio-bar/](http://kaiyuan.github.com/audio-bar
     
 ###REQUIREMENTS
 * jQuery Latest
-* footnotes.css
-* footnotes.js
 * audio-bar.css
 * audio-bar.js

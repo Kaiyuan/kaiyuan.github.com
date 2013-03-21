@@ -1,6 +1,6 @@
 var music = document.getElementById("audio-bar"); //處理 audio 必須使用 js 原來的選擇方式
 var audio = $('#audio-bar');
-var text1 = '<span style="display:inline-block;margin: 0 2px -6px 2px;"><ul class="audio-bar-box sup';
+var text1 = '<span style="display:inline-block;margin: 0 2px -6px 2px;"><ul class="audio-bar-box';
 var text2 = '" data-img="';
 var text3 = '" data-text="'
 var text4 = '"><li id="playan">&nbsp;</li><li><div class="bar-box"><div id="play-bar"></div></div></li><li id="playtime">00:00</li><li>&nbsp;<div class="auVolume"><span id="auVbar">&nbsp;</span></div></li>';
@@ -12,7 +12,7 @@ if (dataimg) {
 } else if (datatext) {
   audio.before(text1+text3+datatext+text4);
 } else{
-  audio.before(text1+datatext+text4);
+  audio.before(text1+text4);
 };//audio 標籤前插入的內容
 audio.after(text5);//audio 標籤之後插入的內容
 var barbox = $('.audio-bar-box .bar-box');
@@ -47,13 +47,12 @@ function audioerror () {
 }//加載失敗時候提示
 playan.click(function(){
   if (music.paused) {
-        $(this).addClass('stop');//暂停
-        music.play();
-      }
-      else {
-        $(this).removeClass('stop');//播放
-        music.pause();
-    } 
+    $(this).addClass('stop');//暂停
+    music.play();
+  } else {
+    $(this).removeClass('stop');//播放
+    music.pause();
+  } 
 });
 music.addEventListener('ended', function() {
 	playan.removeClass('stop');//播放完毕
@@ -69,3 +68,29 @@ auV.click( function (event) {
   music.volume = (event.pageX-$(this).offset().left-2)/auVw;//音量控制
   $('#auVbar').css("width",event.pageX-$(this).offset().left-2);//最后减2是因为 css 設置有边线和留白
 });
+$('.audio-bar-box').hover(
+  function () {
+    var suptext = $(this).data("text");
+    var supimg = $(this).data("img");
+    if (suptext||supimg) {
+      if (supimg) {
+        $("body").append('<div class="sup-box sup-img"><img src="'+supimg+'"></div>' );
+      }else {
+        $("body").append('<div class="sup-box">'+suptext+'</div>' );
+      };
+      var sbox = $('.sup-box');
+      var supx = $(this).offset().left;
+      var supy = $(this).offset().top;
+      var supw = $(this).outerWidth();
+      var boxx = sbox.outerWidth();
+      var boxy = sbox.outerHeight();
+      sbox.css('left', supx+supw/2-boxx/2);
+      sbox.css('top', supy-boxy-8);
+      sbox.hide();
+      sbox.fadeIn("fast");
+    };
+  },
+  function () {
+    $('.sup-box').detach();
+  }
+);
