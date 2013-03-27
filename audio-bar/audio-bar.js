@@ -40,7 +40,7 @@ function show() {
 function showtime() {
 	showtime = gettime(music.duration-music.currentTime);
   playtime.text(showtime); //当前播放时间
-playbar.css("width", music.currentTime/music.duration*barWidth-2);//进度条
+  playbar.css("width", music.currentTime/music.duration*barWidth-2);//进度条
 }
 function audioerror () {
   $('.audio-bar-box').append('<div id="auError">Audio Error!</div>');
