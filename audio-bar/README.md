@@ -9,6 +9,3 @@ Demo: [http://kaiyuan.github.com/audio-bar/](http://kaiyuan.github.com/audio-bar
 * jQuery Latest
 * audio-bar.css
 * audio-bar.js
-
-###License
-Released under the MIT license.
