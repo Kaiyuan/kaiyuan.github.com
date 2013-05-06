@@ -53,6 +53,7 @@ hr {
 }
 body img {
 	border: 0px solid #eee;
+	max-width: 100%;
 }
 a{
 	color: #000;
