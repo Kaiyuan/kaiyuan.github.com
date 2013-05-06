@@ -27,6 +27,7 @@ body {
 input, textarea, select, button, option {
 	outline: none;
 	font-family: "museo-slab", "museo slab", "Helvetica Neue", Ubuntu, "WenQuanYi Micro Hei", Helvetica, "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande", "Hiragino Sans GB W3", "Hiragino Sans GB", "Microsoft JhengHei", "PMingLiU", Arial, sans-serif;
+	resize: none;
 }
 input{vertical-align:middle;}
 /*input[type="search"] {

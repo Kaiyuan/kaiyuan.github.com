@@ -1,3 +1,11 @@
+<?php 
+	include_once "Michelf/markdown.php"; //引用 PHP markdown
+	spl_autoload_register(function($class){
+	require preg_replace('{\\\\|_(?!.*\\\\)}', DIRECTORY_SEPARATOR, ltrim($class, '\\')).'.php';
+	});
+	use Michelf\Markdown;
+	//文本转换引用结束
+?>
 <!DOCTYPE hrml>
 <html>
 <head>
@@ -11,20 +19,19 @@
 </head>
 <body>
 	<header><section class="centerbox"><h1>Developer</h1><a href="http://kaiyuan.github.io">kaiyuan.github.io</a></section></header>
-	<article class="center">
-		<section class="centerbox">
-			<a href="footnotes.js/sup.html"><img src="https://du26vw.blu.livefilestore.com/y1pTSd-U8iOjkSW3QBQrqtB0opEexu9wNM4qfIIjZ_GCbH26F0oEpK2DSppeVKPMYbDDuND2ozX_NSaJFMcfkkU9Q700C89Ch-I/bootstrap-footnotes-js-no-bootstrap-760.png" width="100%" alt="Footnotes.js"></a>
-			<a href="footnotes.js/sup.html"><h2>Footnotes.js</h2></a>
-			<p>基於 <a class="sup" data-text="原始版本需要引用 Bootstrap." href="http://taitems.github.com/UX-Lab/BootstrapFootnotes/index.html">bootstrap.footnotes.js</a> 效果，從新編寫的一個僅僅依賴 jQuery 的特效。</p>
-		</section>
-	</article>
-	<article class="center">
-		<section class="centerbox">
-			<a href="audio-bar/"><img src="https://du26vw.blu.livefilestore.com/y1perEucdbZ6cNvMMKi_lDDIbkV1LYF2PPbYYlbu45g8seV94CdC84qRbC98rlrBiZhyp2qjdO6uUEhQaiE7ULPVnorRzvU6XDE/audio-bar-760.png" width="100%" alt="Footnotes.js"></a>
-			<a href="audio-bar/"><h2>Audio bar</h2></a>
-			<p>一個音頻播放器，使用 <code>audio</code> 標簽媒體播放，支持設置封面或標題。</p>
-		</section>
-	</article>
+	<?php
+		$fileMd = glob('data/*.md');
+		if (is_array($fileMd)) {
+			for ($i=0;$i<count($fileMd);$i++) {
+				$echoMd = $fileMd[$i];
+				$fileText = file_get_contents($echoMd);
+				$my_html = Markdown::defaultTransform($fileText);
+				echo '<article class="center"><section class="centerbox">'.$my_html.'</section></article>';
+			}
+		} else {
+			echo '<article class="center">暂无文章!</article>';
+		}
+	?>
 	<article class="center">
 		<section class="centerbox">
 	  		    <div id="disqus_thread"></div>

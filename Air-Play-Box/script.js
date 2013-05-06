@@ -3,7 +3,7 @@
 ** http://boxks.com
 ** Github: https://github.com/Kaiyuan/Music-Player
 */
-// sup
+// sup 
 $('.sup').hover(
   function () {
     var suptext = $(this).data("text");
@@ -43,7 +43,8 @@ vbox = $('#volumebar');
 vboxw = 120;
 vbutton = $('#vbutton');
 vber = $('#vber');
-mlbox = $('#list')
+mlbox = $('#list');
+listbox = document.getElementById("list");
 mimg = $('#img');
 musicname = $('#name');
 addbutton = $("#addbutton");
@@ -67,34 +68,8 @@ function showtime() {
   	playtime.text(showtime); //当前播放时间
   	playber.css("width", audio.currentTime/audio.duration*playberW-6);//进度条
 }
-// Add Music
-function additem (aname,aurl,aurl) {
-	if (aurl) {
-		if (addimg) {
-			if (aname) {
-				var musicname = aname;
-			} else {
-				var musicname = aurl;
-			};
-			var musicimg = aurl;
-			musics.musiclist.push({"mname":[musicname],"url":[musicurl],"img":[musicimg]});
-		} else {
-			if (aname) {
-				var musicname = aname;
-			} else {
-				var musicname = aurl.substring(aurl.lastIndexOf("/")+1,aurl.lastIndexOf(".mp3"));
-			};
-			musics.musiclist.push({"mname":[musicname],"url":[musicurl]});
-		};
-		mlbox.append('<li draggable="true"><span>'+musicname+'</span><div class="edit"></div><div class="del"></div></li>');
-		localStorage['musiclist'] = JSON.stringify(musics);
-	} else {
-		var error = "URL Null!";
-		return error;
-	};
-};
 // Music Play
-function echomusic (no) {	//调用数据播放函数
+function echomusic (no) {
 	musicname.text(musics.musiclist[no].mname);
 	audio.src = musics.musiclist[no].url;
 	musicimg = musics.musiclist[no].img;
@@ -155,21 +130,21 @@ addbutton.click(function () {
 		var musicurl = addmusic.val();
 		if (addimg.val()) {
 			if (addname.val()) {
-				var musicname = addname.val();
+				var addMname = addname.val();
 			} else {
-				var musicname = musicurl;
+				var addMname = musicurl;
 			};
 			var musicimg = addimg.val();
-			musics.musiclist.push({"mname":[musicname],"url":[musicurl],"img":[musicimg]}); //增加数组
+			musics.musiclist.push({"mname":[addMname],"url":[musicurl],"img":[musicimg]}); //增加数组
 		} else {
 			if (addname.val()) {
-				var musicname = addname.val();
+				var addMname = addname.val();
 			} else {
-				var musicname = musicurl.substring(musicurl.lastIndexOf("/")+1);
+				var addMname = musicurl.substring(musicurl.lastIndexOf("/")+1);
 			};
-			musics.musiclist.push({"mname":[musicname],"url":[musicurl]});
+			musics.musiclist.push({"mname":[addMname],"url":[musicurl]});
 		};
-		mlbox.append('<li draggable="true"><span>'+musicname+'</span><div class="edit"></div><div class="del"></div></li>');//添加li
+		mlbox.append('<li draggable="true" data-url='+musicurl+' data-img='+musicimg+' data-name='+addMname+'><span>'+addMname+'</span><div class="edit"></div><div class="del"></div></li>');//添加li
 		$('#list li:last').hide();
 		$('#list li:last').slideDown("show");
 		localStorage['musiclist'] = JSON.stringify(musics);//写入数据库
@@ -241,7 +216,7 @@ if (localStorage.musiclist) {	//判断数据库是否为空
 	if (musics.musiclist[0]) {
 		for (i = 0; i < musics.musiclist.length; i++) {
 			muname = musics.musiclist[i].mname;
-			mlbox.append('<li draggable="true"><span>'+muname+'</span><div class="edit"></div><div class="del"></div></li>');
+			mlbox.append('<li draggable="true" data-url='+musics.musiclist[i].url+' data-img='+musics.musiclist[i].img+' data-name='+musics.musiclist[i].mname+'><span>'+muname+'</span><div class="edit"></div><div class="del"></div></li>');
 		};
 		musicname.text(musics.musiclist[0].mname);
 		audio.src = musics.musiclist[0].url;
@@ -258,6 +233,7 @@ if (localStorage.musiclist) {	//判断数据库是否为空
 	localStorage['musiclist'] = musicsl;
 	musics = JSON.parse(localStorage.musiclist);//获取数据组
 };
+
 music.addEventListener("timeupdate", showtime, true);//获得当前播放时间
 music.addEventListener("loadedmetadata", show, true);//获得音频总时间
 pberbox.click( function () {
@@ -359,7 +335,6 @@ $('body').on('click', '#editbutton',function () {
 	var editurl = $('#editurl').val();
 	var editimg = $('#editimg').val();
 	if (editurl.substring(0,7) == "http://" || editurl.substring(0,8) == "https://") {
-		listbox = document.getElementById("list");
 		listeditbox = listbox.getElementsByTagName("li")[editNo];
 		if (editname == "") {
 			musics.musiclist[editNo].mname = editurl.substring(editurl.lastIndexOf("/")+1);
@@ -388,7 +363,18 @@ $("body").on("click", "#closebutton", function () {
 $('body').on('click','input',function () {
 	$(this).select();
 });
-// sortable
-// $('#list').sortable().on('sortupdate', function() {
-// 	item: "li";
-// });
+//sortable 拖动编辑播放单
+$('#list').sortable().on('sortupdate', function() {
+	var listLiBox = listbox.getElementsByTagName("li");
+	lf = '{"musiclist":[{'
+	for (i = 0; i < listLiBox.length; i++) {
+		var dataName = listLiBox[i].dataset.name;
+		var dataUrl = listLiBox[i].dataset.url;
+		var dataImg = listLiBox[i].dataset.img;
+		lf += '"mname":["'+dataName+'"],"url":["'+dataUrl+'"],"img":["'+dataImg+'"]},{';
+	};
+		lf = lf.substring(0, lf.length - 2);
+		lf += "]}";
+		localStorage['musiclist'] = lf;
+		musics = JSON.parse(lf);
+});

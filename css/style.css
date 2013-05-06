@@ -94,6 +94,9 @@ pre {
 	overflow-x: hidden;
 	font-family: Consolas, "Liberation Mono", Courier, monospace;
 } 
+p {
+	margin: 0 0 2em 0;
+}
 .yellow {background-color: #FFFFCC;}
 .yellow::selection {background-color: #DFF3E4; color: #999;}
 .blue {background-color: #E1F3FC;}
