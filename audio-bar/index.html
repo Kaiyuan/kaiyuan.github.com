@@ -4,7 +4,6 @@
 	<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
 	<title>Audio bar - Kaiyuan</title>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-	<script type="text/javascript" chares="utf-8" src="../../../js/jquery-1.9.0.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/museo-slab.css">
 <style>
 @charset "utf-8";
@@ -197,65 +196,17 @@ body .github-button:before {
 		</section>
 	</article>
 	<article class="center">
-		<section class="centerbox">
-	  		    <div id="disqus_thread"></div>
-			    <script type="text/javascript">
-			        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-			        var disqus_shortname = 'kaiyuangithub'; // required: replace example with your forum shortname
-
-			        /* * * DON'T EDIT BELOW THIS LINE * * */
-			        (function() {
-			            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-			            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-			            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-			        })();
-			    </script>
-			    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-			    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-			    
-		</section>
+		<section id="disqus" class="centerbox"></section>
 	</article>
-	<footer style="font-size: 12px;">
-		<section class="centerbox">
-			If my project can help to your words, I hope you can give generous donors.<br>
-			如果我的項目能幫助到您，希望你能慷概的給予捐助以便創作更多能幫助您的代碼。<br>
-			<ul id="donate">
-				<li id="pp">
-					<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-					<input type="hidden" name="cmd" value="_donations">
-					<input type="hidden" name="business" value="sealour@gmail.com">
-					<input type="hidden" name="lc" value="US">
-					<input type="hidden" name="item_name" value="Audio bar">
-					<input type="hidden" name="no_note" value="0">
-					<input type="hidden" name="currency_code" value="USD">
-					<input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_SM.gif:NonHostedGuest">
-					<input class="sup" data-text="Paypal" type="submit" border="0" name="submit" alt="PayPal——最安全便捷的在线支付方式！" value="Donate">
-					<img alt="" border="0" src="https://www.paypalobjects.com/zh_XC/i/scr/pixel.gif" width="1" height="1">
-					</form>
-				</li>
-				<li id="ali">
-					<a class="sup" data-text="支付寶" target="_blank" href="https://me.alipay.com/kaiyuan">捐助</a>
-				</li>
-			</ul><br>
-			Design <a href="http://boxks.com">Kaiyuan</a>
-		</section>
-	</footer>
-<!--[if lte IE 9]>
-	<link rel="stylesheet" href="http://kaiyuan.github.com/killie/killie-noimg.css" title="text/css" media="screen"  />
-	<div class="killie">
-		<div class="background"></div>
-		<div class="kbox">
-			<ul>
-				<li id="chrome-box"><a href="https://www.google.com/intl/zh-CN/chrome/browser/" target="_blank"><img src="http://i698.photobucket.com/albums/vv349/sealour/web/chrome_64_zps779df127.png" width="64" height="64" /><br />Chrome</a></li>
-				<li id="firefox-box"><a href="http://www.mozilla.org/en-US/firefox/all/#zh-CN" target="_blank"><img src="http://i698.photobucket.com/albums/vv349/sealour/web/firefox_64_zps602a7ee5.png" width="64" height="64"/><br />FireFox</a></li>
-				<li id="opera-box"><a href="http://www.opera.com/" target="_blank"><img src="http://i698.photobucket.com/albums/vv349/sealour/web/opera_64_zps13ec1943.png" width="64" height="64"/><br />Opera</a></li>
-			</ul>
-		</div>
-	</div>
-<![endif]-->
+	<footer style="font-size:12px;"></footer>
+	<script>
+		$('#disqus').load("http://kaiyuan.github.io/disqus.html");
+		$('footer').load("http://kaiyuan.github.io/footer.html");
+	</script>
 	<link rel="stylesheet" type="text/css" href="audio-bar.css">
 	<script type="text/javascript" chares="utf-8" src="audio-bar.js"></script>
-	<link rel="stylesheet" type="text/css" href="footnotes.js/footnotes.css">
-	<script type="text/javascript" chares="utf-8" src="../footnotes.js/footnotes.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://kaiyuan.github.io/footnotes.js/footnotes.css">
+	<script type="text/javascript" charset="utf-8" src="http://kaiyuan.github.io/footnotes.js/footnotes.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://kaiyuan.github.io/killie/killie.js">
 </body>
 </html>

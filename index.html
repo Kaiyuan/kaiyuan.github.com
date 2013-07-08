@@ -1,37 +1,15 @@
-<!-- <?php 
-	include_once "Michelf/markdown.php"; //引用 PHP markdown
-	spl_autoload_register(function($class){
-	require preg_replace('{\\\\|_(?!.*\\\\)}', DIRECTORY_SEPARATOR, ltrim($class, '\\')).'.php';
-	});
-	use Michelf\Markdown;
-	//文本转换引用结束
-?>-->
 <!DOCTYPE hrml>
 <html>
 <head>
 	<meta charset="utf-8" />
 	<title>Developer - Kaiyuan</title>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-	<script type="text/javascript" chares="utf-8" src="../../../js/jquery-1.9.0.min"></script>
-	<link rel="stylesheet" type="text/css" href="footnotes.js/museo-slab.css">
-	<link rel="stylesheet" type="text/css" href="footnotes.js/footnotes.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="http://kaiyuan.github.io/footnotes.js/museo-slab.css">
+	<link rel="stylesheet" type="text/css" href="http://kaiyuan.github.io/footnotes.js/footnotes.css">
+	<link rel="stylesheet" type="text/css" href="http://kaiyuan.github.io/css/style.css">
 </head>
 <body>
 	<header><section class="centerbox"><h1>Developer</h1><a href="http://kaiyuan.github.io">kaiyuan.github.io</a></section></header>
-	<!-- <?php
-		$fileMd = glob('data/*.md');
-		if (is_array($fileMd)) {
-			for ($i=0;$i<count($fileMd);$i++) {
-				$echoMd = $fileMd[$i];
-				$fileText = file_get_contents($echoMd);
-				$my_html = Markdown::defaultTransform($fileText);
-				echo '<article class="center"><section class="centerbox">'.$my_html.'</section></article>';
-			}
-		} else {
-			echo '<article class="center">暂无文章!</article>';
-		}
-	?> -->
 	<article class="center">
 		<section class="centerbox"><p><img src="https://du26vw.blu.livefilestore.com/y1pTSd-U8iOjkSW3QBQrqtB0opEexu9wNM4qfIIjZ_GCbH26F0oEpK2DSppeVKPMYbDDuND2ozX_NSaJFMcfkkU9Q700C89Ch-I/bootstrap-footnotes-js-no-bootstrap-760.png" alt="Footnotes.js"></p>
 
@@ -106,7 +84,7 @@
 		</div>
 	</div>
 <![endif]-->
-	<script type="text/javascript" charset="utf-8" src="footnotes.js/footnotes.js"></script>
+	<script type="text/javascript" charset="utf-8" src="http://kaiyuan.github.io/footnotes.js/footnotes.js"></script>
 	<script type="text/javascript" charset="utf-8" src="js/script.js"></script>
 </body>
 </html>
