@@ -4,3 +4,6 @@ $('#btc-key').hover(function() {
 $('#btc>span').click(function() {
 	$("#btc>ul").toggleClass('block');
 });
+$("img").lazyload({
+    effect : "fadeIn"
+});
