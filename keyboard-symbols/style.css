@@ -203,7 +203,7 @@ a, input, select, blockquote, .typekit-badge, #backTop, .list, .trs, span.sup, #
 	width: 100%;
 	text-align: center;
 }
-#key-box li {
+#key-box li, #key-box li[id^="Arrow-"] .Arrow-button {
 	display: inline-block;
 	/*float: left;*/
 	min-width: 34px;
@@ -242,6 +242,41 @@ a, input, select, blockquote, .typekit-badge, #backTop, .list, .trs, span.sup, #
 }
 #capslock:hover>.led::after {
 	background: #9fe825;
+}
+
+#key-box li[id^="Arrow-"] {
+	border-width: 0 !important;
+	padding: 0 !important;
+	width: 44px !important;
+	height: 44px !important;
+}
+#key-box li[id^="Arrow-"] span {
+	width: 32px;
+	height: 20px;
+}
+#key-box li[id^="Arrow-"] .Arrow-button {
+	margin: 0;
+	height: 14px;
+	line-height: 14px;
+}
+#key-box #Arrow_top-bottom {
+	padding: 0;
+	height: 42px;
+	width: 42px;
+}
+#key-box #Arrow_top-bottom span {
+	height: 20px;
+	line-height: 20px;
+	border: 1px solid #ddd;
+	border-radius: 0;
+}
+#key-box #Arrow_top-bottom span:first-child {
+	border-width: 0 0 1px 0;
+	border-color: #ddd;
+}
+#key-box #Arrow_top-bottom span:last-child {
+	border-width: 1px 0 0 0;
+	border-color: #eee;
 }
 
 footer {
