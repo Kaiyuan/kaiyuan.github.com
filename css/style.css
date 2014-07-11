@@ -182,6 +182,24 @@ footer {
 footer .centerbox {text-align: center;}
 footer #donate {display: inline-block;}
 footer #donate li {float: left;margin: 10px;}
+#fork {
+	position: fixed;
+	font-size: 12px;
+	height: 32px;
+	width: 240px;
+	top: 35px;
+	right: -70px;
+	line-height: 32px;
+	text-align: center;
+}
+#fork a {
+	display: block;
+	background-color: #000;
+	color: #fff;
+	transform-style: preserve-3d;
+    transform-origin: center center;
+    transform: rotateZ(45deg);
+}
 #pp input[type="submit"] {
 	font-size: 14px;
 	padding: 2px 14px;
