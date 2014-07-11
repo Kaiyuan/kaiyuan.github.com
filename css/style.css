@@ -196,8 +196,17 @@ footer #donate li {float: left;margin: 10px;}
 	display: block;
 	background-color: #000;
 	color: #fff;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
 	transform-style: preserve-3d;
+    -webkit-transform-origin: center center;
+    -moz-transform-origin: center center;
+    -o-transform-origin: center center;
     transform-origin: center center;
+    -webkit-transform: rotateZ(45deg);
+    -moz-transform: rotateZ(45deg);
+    -o-transform: rotateZ(45deg);
     transform: rotateZ(45deg);
 }
 #pp input[type="submit"] {
