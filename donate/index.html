@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" /><!--禁止缩放-->
+	<link rel="stylesheet" href="style.css">
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+	<script>
+
+		String.prototype.getQuery = function(name) {  
+		　　var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");  
+		　　var r = this.substr(this.indexOf("\?")+1).match(reg);  
+		　　if (r!=null) return unescape(r[2]); return null;  
+		}  
+		var strHref = location.href.substring(location.href.indexOf("?")+1);
+		var ppitem_name	=	alititle	= strHref.getQuery('item');	//项目名称
+		var donatrNo	=	strHref.getQuery('no');;	//数量
+	</script>
+	<script src="script.js"></script>
+	<title>Donate</title>
+</head>
+<body class="center">
+	<div id="PostBox" class="centerbox relative">
+		<div id="Description" class="fs12 left absolute">
+			<p>
+				If my project can help to your words, I hope you can give generous donors.<br>
+				如果我的項目能幫助到您，希望你能慷概的給予捐贈，以便創作更多能幫助您的代碼。
+			</p>
+		</div>
+		<div id="donateBox" class="absolute center">
+			<ul id="donate" class="list">
+				<li id="pp">
+					<input id="ppButton" type="submit" border="0" name="button" alt="PayPal" value="Donate">
+				</li>
+				<li id="btc">
+					<span>BitCoin</span>
+					<ul>
+						<li class="img left">
+						</li>
+						<li>
+							<input id="btc-key" type="text" value="14JkMR68n4PBASB3TgvpjtaPTbfffSwFbW" readonly="readonly">
+						</li>
+					</ul>
+				</li>
+				<li id="ali">
+					<div id="alib">
+						<input id="aliButton" name="pay" type="button" value="AliPay" />
+						<div class="tr3"></div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
