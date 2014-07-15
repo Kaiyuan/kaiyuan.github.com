@@ -171,6 +171,9 @@ nav .dropdown::after, #price::after {
   	display: inline-block;
   	text-decoration: inherit;
 }
+header {
+	background-color: #e8eaed;
+}
 header .centerbox {text-align: center;padding: 20px 0;}
 article[class="center"] {
  	padding: 40px 0;
