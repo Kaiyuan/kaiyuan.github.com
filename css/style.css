@@ -172,7 +172,7 @@ nav .dropdown::after, #price::after {
   	text-decoration: inherit;
 }
 header {
-	background-color: #e8eaed;
+	background-color: #f1f3f6;
 }
 header .centerbox {text-align: center;padding: 20px 0;}
 article[class="center"] {
