@@ -14,19 +14,21 @@
 		}  
 		var strHref = location.href.substring(location.href.indexOf("?")+1);
 		var ppitem_name	=	alititle	= strHref.getQuery('item');	//项目名称
-		var donatrNo	=	strHref.getQuery('no');;	//数量
+		var donatrNo	=	strHref.getQuery('no');	//数量
+		var ifso	= strHref.getQuery('show');
 	</script>
 	<script src="script.js"></script>
 	<title>Donate</title>
 </head>
 <body class="center">
 	<div id="PostBox" class="centerbox relative">
-		<div id="Description" class="fs12 left absolute">
-			<p>
-				If my project can help to your words, I hope you can give generous donors.<br>
-				如果我的項目能幫助到您，希望你能慷概的給予捐贈，以便創作更多能幫助您的代碼。
-			</p>
-		</div>
+		
+		<script>
+		if (ifso) {
+			document.write('<div id="Description" class="fs12 left absolute"><p>If my project can help to your words, I hope you can give generous donors.<br>如果我的項目能幫助到您，希望你能慷概的給予捐贈，以便創作更多能幫助您的代碼。</p></div>');
+		};
+		</script>
+		
 		<div id="donateBox" class="absolute center">
 			<ul id="donate" class="list">
 				<li id="pp">
